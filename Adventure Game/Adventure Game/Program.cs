@@ -2,20 +2,29 @@
 
 namespace AdventureGame
 {
-	class Program
+	class Game
 	{
 		static void Main()
 		{
-			string CharacterName = "Pless Haldur";
-
-			Console.WriteLine("Welcome to Jetbuilders!");
-			Console.WriteLine("Our motto is: Create. Construct. Conclude.");
-			Console.WriteLine("Enter your name:");
-
-			CharacterName = Console.ReadLine();
-
-			Console.WriteLine(CharacterName + "? Well no one gets to choose their own name I guess. Welcome aboard!");
 		}
 	}
+	class Item
+	{
+
+	}
+	class Program
+	{
+
+	}
+
 }
 
+//string charactername = "pless haldur";
+
+//console.writeline("welcome to jetbuilders!");
+//			console.writeline("our motto is: create. construct. conclude.");
+//			console.writeline("enter your name:");
+
+//			charactername = console.readline();
+
+//			console.writeline(charactername + "? well no one gets to choose their own name i guess. welcome aboard!");
