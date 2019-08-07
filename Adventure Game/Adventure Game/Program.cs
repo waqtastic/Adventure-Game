@@ -4,14 +4,14 @@ namespace AdventureGame
 {
 	public static class Game
 	{
-		
+
 		static string FCharacterName = "Pless";
 		static string LCharacterName = "Haldur";
-		
+
 		public static void StartGame()
 		{
-			Dialogue("Welcome to JETBUILDERS!" , "white");
-			Dialogue("Our motto is: CREATE. CONSTRUCT. CONCLUDE." , "cyan");
+			Dialogue("Welcome to JETBUILDERS!", "white");
+			Dialogue("Our motto is: CREATE. CONSTRUCT. CONCLUDE.", "cyan");
 			NameCharacter();
 		}
 
@@ -19,9 +19,9 @@ namespace AdventureGame
 		{
 			Console.WriteLine("Enter your name first name:");
 			FCharacterName = Console.ReadLine();
-			Console.WriteLine("Enter your last name:");
+			Console.WriteLine("Enter your last name");
 			LCharacterName = Console.ReadLine();
-			Console.WriteLine("Welcome aboard " + FCharacterName +  "! I'm sure you'll do just fine.");
+			Console.WriteLine("Welcome aboard " + FCharacterName + " " +  LCharacterName + "! I'm sure you'll do just fine.");
 			Console.ReadKey();
 			Console.Clear();
 			Introduction();
@@ -29,18 +29,36 @@ namespace AdventureGame
 
 		static void Introduction()
 		{
-			Console.WriteLine("You are in an office, on your first day. You are approached by your new boss, ");
+			Console.WriteLine("You are in an office, on your first day. You are approached by \nyour new boss, Ricardo");
 			Console.ReadKey();
-			Dialogue("\"Ah! " + FCharacterName + "! Good to see you here bright and early. Your desk is over there\"", "cyan");
+			Dialogue("\"Ah! " + FCharacterName + "! Good to see you here bright and early. \nYour desk is over there\"", "cyan");
 			Console.ReadKey();
-			Console.WriteLine("You see the desk he pointed at, above it is a poster with a jet on it along with the company motto:");
+			Console.WriteLine("You see the desk he pointed at, above it is a poster with a jet\n on it along with the company motto:");
 			Console.ReadKey();
 			Dialogue("CREATE. CONSTRUCT. CONCLUDE.", "Yellow");
 			Console.ReadKey();
+			Console.WriteLine("AS you look around you notice there are jets everywhere, one of\n the rooms looks like it was taken straight out of a \nLockheed SR-71 Blackbird");
+			Console.WriteLine("Dang, how much did they spend to get that?");
+			Console.ReadKey();
+			Console.WriteLine("You sit down at your desk and turn on your computer, when you \nrealise you haven't been assigned anything to do.");
+			Console.WriteLine("What do you do?");
+			Console.ReadKey();
 		}
-		static void Dialogue(string message, string color)
+
+		static void Choice()
 		{
-			if (color== "red")
+			string input = "";
+			Console.WriteLine("A: Go get a cup of coffee first");
+			Console.WriteLine("B: Ask someone what it is you should be doing");
+			input = Console.ReadLine();
+		}
+
+		//change this into a switch statement at some point
+		
+		static void Dialogue(string message, string color)
+
+		{
+			if (color == "red")
 			{ Console.ForegroundColor = ConsoleColor.Red; }
 			else if (color == "green")
 			{ Console.ForegroundColor = ConsoleColor.Green; }
@@ -54,9 +72,6 @@ namespace AdventureGame
 			Console.WriteLine(message);
 			Console.ResetColor();
 		}
-		
-
-		
 	}
 	
 	class Item
@@ -73,16 +88,5 @@ namespace AdventureGame
 	}
 
 }
-
-/*string charactername = "pless haldur";
-
-console.writeline("welcome to jetbuilders!");
-			console.writeline("our motto is: create. construct. conclude.");
-			console.writeline("enter your name:");
-
-			charactername = console.readline();
-
-			console.writeline(charactername + "? well no one gets to choose their own name i guess. welcome aboard!");
-			*/
 
 	
