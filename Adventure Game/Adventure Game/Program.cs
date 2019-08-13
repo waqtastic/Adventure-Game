@@ -21,7 +21,7 @@ namespace AdventureGame
 			FCharacterName = Console.ReadLine();
 			Console.WriteLine("Enter your last name");
 			LCharacterName = Console.ReadLine();
-			Console.WriteLine("Welcome aboard " + FCharacterName + " " +  LCharacterName + "! I'm sure you'll do just fine.");
+			Console.WriteLine("Welcome aboard " + FCharacterName + " " + LCharacterName + "! I'm sure you'll do just fine.");
 			Console.ReadKey();
 			Console.Clear();
 			Introduction();
@@ -33,28 +33,129 @@ namespace AdventureGame
 			Console.ReadKey();
 			Dialogue("\"Ah! " + FCharacterName + "! Good to see you here bright and early. \nYour desk is over there\"", "cyan");
 			Console.ReadKey();
-			Console.WriteLine("You see the desk he pointed at, above it is a poster with a jet\n on it along with the company motto:");
+			Console.WriteLine("You see the desk he pointed at, above it is a poster with a jet \non it along with the company motto:");
 			Console.ReadKey();
 			Dialogue("CREATE. CONSTRUCT. CONCLUDE.", "Yellow");
 			Console.ReadKey();
-			Console.WriteLine("AS you look around you notice there are jets everywhere, one of\n the rooms looks like it was taken straight out of a \nLockheed SR-71 Blackbird");
+			Console.WriteLine("AS you look around you notice there are jets everywhere, one of \nthe rooms looks like it was taken straight out of a \nLockheed SR-71 Blackbird");
 			Console.WriteLine("Dang, how much did they spend to get that?");
 			Console.ReadKey();
 			Console.WriteLine("You sit down at your desk and turn on your computer, when you \nrealise you haven't been assigned anything to do.");
-			Console.WriteLine("What do you do?");
+			Console.WriteLine("What do you do " + FCharacterName + "?");
 			Console.ReadKey();
+			Console.Clear();
+			Choice();
 		}
 
 		static void Choice()
 		{
+
 			string input = "";
+			Console.WriteLine("You could get a cup of coffee, or you could ask someone what you should be doing");
+			Console.ReadKey();
 			Console.WriteLine("A: Go get a cup of coffee first");
 			Console.WriteLine("B: Ask someone what it is you should be doing");
+			Console.ReadKey();
+			Console.WriteLine("Enter your choice:");
 			input = Console.ReadLine();
+			input = input.ToUpper();
+			if (input == "A")
+			{
+				Console.Clear();
+				Console.WriteLine("You go to the kitchen area and see some people milling around a coffee machine, you \ngrab a cup and push the button to vend a fresh brew");
+				Console.ReadKey();
+				Console.WriteLine("You see some other people milling around the office. Do you talk to them or go back \nto your desk?");
+				Console.ReadKey();
+				Console.WriteLine("A: Introduce yourself to the others at the office");
+				Console.WriteLine("B: Go back to your desk");
+				Console.ReadKey();
+				input = Console.ReadLine();
+				input = input.ToUpper();
+				if (input == "A")
+				{
+					Console.Clear();
+					Console.WriteLine("You turn to one of the other people in the area and introduce yourself");
+					Console.ReadKey();
+					Dialogue("Hello, my name is " + FCharacterName + " I just started today", "green");
+					Console.ReadKey();
+					Console.WriteLine("A sleepy looking guy with a cup of coffee looks at you blankly for a moment before \nrealising that you were talking to them");
+					Console.ReadKey();
+					Dialogue("Hmm? Oh I thought you were talking to Jen", "Yellow");
+					Console.ReadKey();
+					Console.WriteLine("He points vaguely behind him. You see there's no one there");
+					Console.ReadKey();
+					Dialogue("I'm Bob. So you're new huh? Welcome to the grindstone. Got your first assignment yet?", "Yellow");
+					Console.ReadKey();
+					Console.WriteLine("You shake your head");
+					Dialogue("You should talk to Greg then, he'll assign you something", "Yellow");
+					Console.ReadKey();
+					Console.WriteLine("He points you towards a guy in a checkered shirt, who is stood at a desk");
+					Dialogue("Thanks Bob, nice to meet you by the way", "Green");
+					Console.ReadKey();
+					Console.WriteLine("Bob nods in acknowledgement and wanders off to his desk");
+					Console.ReadKey();
+					Console.WriteLine("You decide to go see the person who hired you, Greg");
+					Console.ReadKey();
+					Dialogue("\"Hey Greg, it's my first day. What should I do?\"", "Green");
+					Console.ReadKey();
+					Dialogue("\"Oh hey " + FCharacterName + "! Welcome aboard. Well since you're just starting out we thought \nwe'd give you a simple project\"", "Cyan");
+					Console.ReadKey();
+					Dialogue("\"Great, what do you want me to do?\"", "Green");
+					Console.ReadKey();
+					Console.WriteLine("Greg hands you a knife");
+					Console.ReadKey();
+					Dialogue("\"I need you to go into the basement and shank the bugs down there\"", "Cyan");
+					Console.ReadKey();
+					Dialogue("\"I thought this was a software company?\"", "Green");
+					Console.ReadKey();
+					Dialogue("\"Yes, and it's your job to get rid of those bugs!\"", "Cyan");
+					Console.WriteLine("You are handed a pointy piece of metal, and Greg points you towards an ominous looking door. \nYou're not sure what you've gotten yourself into, but it looks like you have a task at least");
+					Dialogue("And don't forget to mark it \"done\" in Jira afterwards!", "Cyan");
+					BugQuest();
+				}
+				else
+				{
+					//Go back to your desk
+				}
+
+
+			}
+			else
+			{
+				Console.WriteLine("You decide to go see the person who hired you, Greg");
+				Console.ReadKey();
+				Dialogue("\"Hey Greg, it's my first day. What should I do?\"", "Green");
+				Console.ReadKey();
+				Dialogue("\"Oh hey " + FCharacterName + "! Welcome aboard. Well since you're just starting out we thought \nwe'd give you a simple project\"", "Cyan");
+				Console.ReadKey();
+				Dialogue("\"Great, what do you want me to do?\"", "Green");
+				Console.ReadKey();
+				Console.WriteLine("Greg hands you a knife");
+				Console.ReadKey();
+				Dialogue("\"I need you to go into the basement and shank the bugs down there\"", "Cyan");
+				Console.ReadKey();
+				Dialogue("\"I thought this was a software company?\"", "Green");
+				Console.ReadKey();
+				Dialogue("\"Yes, and it's your job to get rid of those bugs!\"", "Cyan");
+				Console.WriteLine("You are handed a pointy piece of metal, and Greg points you towards an ominous looking door. \nYou're not sure what you've gotten yourself into, but it looks like you have a task at least");
+				Dialogue("And don't forget to mark it \"done\" in Jira afterwards!", "Cyan");
+				BugQuest();
+
+			}
+
+		}
+
+		static void BugQuest()
+		{
+			Console.Clear();
+			Console.ReadKey();
+			Console.WriteLine("You take the metal shank you've been handed, on closer inspection it has \"C#\" written on it. \nYou wonder if you should have just gone to art school as you head towards the door.");
+			Console.ReadKey();
+
 		}
 
 		//change this into a switch statement at some point
-		
+
 		static void Dialogue(string message, string color)
 
 		{
@@ -66,6 +167,8 @@ namespace AdventureGame
 			{ Console.ForegroundColor = ConsoleColor.Yellow; }
 			else if (color == "cyan")
 			{ Console.ForegroundColor = ConsoleColor.Cyan; }
+			else if (color == "blue")
+			{ Console.ForegroundColor = ConsoleColor.Blue; }
 			else
 			{ Console.ForegroundColor = ConsoleColor.White; }
 
