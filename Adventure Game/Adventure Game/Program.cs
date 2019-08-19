@@ -55,17 +55,15 @@ namespace AdventureGame
 			Console.ReadKey();
 			Console.WriteLine("A: Go get a cup of coffee first");
 			Console.WriteLine("B: Ask someone what it is you should be doing");
-			Console.ReadKey();
 			Console.WriteLine("Enter your choice:");
 			input = Console.ReadLine();
 			input = input.ToUpper();
 			if (input == "A")
 			{
 				Console.Clear();
-				Console.WriteLine("You go to the kitchen area and see some people milling around a coffee machine, you \ngrab a cup and push the button to vend a fresh brew");
+				Console.WriteLine("You go to the kitchen area and see some people milling around a coffee machine \nyou grab a cup and push the button to vend a fresh brew");
 				Console.ReadKey();
-				Console.WriteLine("You see some other people milling around the office. Do you talk to them or go back \nto your desk?");
-				Console.ReadKey();
+				Console.WriteLine("You see some other people milling around the office. Do you talk to them or go \nback to your desk?");
 				Console.WriteLine("A: Introduce yourself to the others at the office");
 				Console.WriteLine("B: Go back to your desk");
 				Console.ReadKey();
@@ -115,7 +113,19 @@ namespace AdventureGame
 				}
 				else
 				{
-					//Go back to your desk
+					Console.Clear();
+					Console.WriteLine("You decide to head back to your desk and set up your laptop");
+					Console.ReadKey();
+					Console.WriteLine("You set up your email account and see that it has one called \"First assignment\" \non it. Looks like they've already got something \nin mind for you.");
+					Console.ReadKey();
+					Console.WriteLine("You open the email and it has instructions to... grab a knife and go to the \nbasement to kill some bugs");
+					Console.ReadKey();
+					Console.WriteLine("Are they serious?");
+					Console.ReadKey();
+					Console.WriteLine("As you scroll down you see that it says \"Yes, I'm serious\"");
+					Console.ReadKey();
+					Console.WriteLine("You get up from your desk and grab a knife from the kitchen. \nThen you head towards the basement");
+					BugQuest();
 				}
 
 
@@ -149,14 +159,14 @@ namespace AdventureGame
 		{
 			Console.Clear();
 			Console.ReadKey();
-			Console.WriteLine("You take the metal shank you've been handed, on closer inspection it has \"C#\" written on it. \nYou wonder if you should have just gone to art school as you head towards the door.");
+			Console.WriteLine("You look at the knife, on closer inspection it has \"C#\" written on it. \nYou touch the blade and find see that it is infact sharp. You open the ominous door, \nit's dark in here.");
 			Console.ReadKey();
-
+			Console.WriteLine("You head down the stairs into the gloomy basement. It's difficult to see down here");
 		}
 
 		//change this into a switch statement at some point
 
-		static void Dialogue(string message, string color)
+		public static void Dialogue(string message, string color)
 
 		{
 			if (color == "red")
