@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace AdventureGame
 {
@@ -37,7 +38,7 @@ namespace AdventureGame
 			Console.ReadKey();
 			Dialogue("CREATE. CONSTRUCT. CONCLUDE.", "Yellow");
 			Console.ReadKey();
-			Console.WriteLine("AS you look around you notice there are jets everywhere, one of \nthe rooms looks like it was taken straight out of a \nLockheed SR-71 Blackbird");
+			Console.WriteLine("As you look around you notice there are jets everywhere, one of \nthe rooms looks like it was taken straight out of a \nLockheed SR-71 Blackbird");
 			Console.WriteLine("Dang, how much did they spend to get that?");
 			Console.ReadKey();
 			Console.WriteLine("You sit down at your desk and turn on your computer, when you \nrealise you haven't been assigned anything to do.");
@@ -150,7 +151,6 @@ namespace AdventureGame
 				Console.WriteLine("You are handed a pointy piece of metal, and Greg points you towards an ominous looking door. \nYou're not sure what you've gotten yourself into, but it looks like you have a task at least");
 				Dialogue("And don't forget to mark it \"done\" in Jira afterwards!", "Cyan");
 				BugQuest();
-
 			}
 
 		}
@@ -159,14 +159,71 @@ namespace AdventureGame
 		{
 			Console.Clear();
 			Console.ReadKey();
-			Console.WriteLine("You look at the knife, on closer inspection it has \"C#\" written on it. \nYou touch the blade and find see that it is infact sharp. You open the ominous door, \nit's dark in here.");
+			Console.WriteLine("You look at the knife, on closer inspection it has \"C#\" written on it. \nYou touch the blade and find see that it is infact sharp. You open the ominous\n door, it's dark in here.");
 			Console.ReadKey();
-			Console.WriteLine("You head down the stairs into the gloomy basement. It's difficult to see down here");
+			Console.WriteLine("You head down the stairs into the gloomy basement. It's difficult to see down \nhere");
+			Console.ReadKey();
+			Console.Clear();
+			ChoiceBugQuest();
+
 		}
 
-		//change this into a switch statement at some point
+		private static void ChoiceBugQuest()
+		{
+			string input = "";
+			Console.Clear();
+			Console.WriteLine("You could try finding a light switch in here, or you could just use the torch on your phone");
+			Console.ReadKey();
+			Console.WriteLine("A: Search for the light switch");
+			Console.WriteLine("B: Use the torch on your phone");
+			Console.WriteLine("Enter your choice:");
+			input = Console.ReadLine();
+			input = input.ToUpper();
+			if (input == "A")
+			{
+				Console.WriteLine("You decide to look for the light switch, there's got to be one somewhere.");
+				Console.ReadKey();
+				Console.WriteLine("You search the dimly lit area near the entrance for a light switch without much luck");
+				Console.ReadKey();
+				Console.WriteLine("You stray further and further away from the light, you find a switch. You flip \nit and nothing happens");
+				Console.ReadKey();
+				Console.WriteLine("A buzzing noise from above echoes through the basement, followed by a \"tink\" \nas a dull yellow flash momentarily stuns you");
+				Console.ReadKey();
+				Console.WriteLine("On the second flash you see the bug they mentioned infront of you");
+				BugFight();
+			}
+			else
+			{
+				
+			}
 
-		public static void Dialogue(string message, string color)
+		}
+
+		private static void BugFight()
+		{
+			Console.Clear();
+			Console.ReadKey();
+			Spider();
+			Console.ReadKey();
+			Dialogue("Psst hey kid wanna buy some drugs?", "Red");
+		}
+
+		private static void Spider()
+		{
+			Console.WriteLine(@"
+  /^\ ___ /^\
+ //^\(o o)/^\\
+/'<^~``~''~^>`\
+
+");
+
+
+		}
+
+
+			//change this into a switch statement at some point
+
+			public static void Dialogue(string message, string color)
 
 		{
 			if (color == "red")
@@ -185,21 +242,15 @@ namespace AdventureGame
 			Console.WriteLine(message);
 			Console.ResetColor();
 		}
-	}
-	
-	class Item
-	{
-
-	}
-	class Program
-	{
-		static void Main()
+		class Program
 		{
-			Game.StartGame();
-			Console.Read();
+			static void Main()
+			{
+				Game.StartGame();
+				Console.Read();
+			}
 		}
 	}
-
 }
 
 	
