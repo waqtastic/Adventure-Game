@@ -1,6 +1,28 @@
 ﻿using System;
 using System.Threading;
 
+namespace JB
+{
+
+	class Program
+	{
+
+		static void Main(string[] args)
+		{
+
+			// Display current Title 
+			Console.WriteLine("Default Title: {0}",
+								   Console.Title);
+
+			// Set the Title to GeeksForGeeks 
+			Console.Title = "JETBUILDERS";
+
+			// Display current Title 
+			Console.WriteLine("Changed Title: {0}",
+								   Console.Title);
+		}
+	}
+}
 namespace AdventureGame
 {
 	public static class Game
@@ -36,7 +58,7 @@ namespace AdventureGame
 			Console.ReadKey();
 			Console.WriteLine("You see the desk he pointed at, above it is a poster with a jet \non it along with the company motto:");
 			Console.ReadKey();
-			Dialogue("CREATE. CONSTRUCT. CONCLUDE.", "Yellow");
+			Dialogue("CREATE. CONSTRUCT. CONCLUDE.", "yellow");
 			Console.ReadKey();
 			Console.WriteLine("As you look around you notice there are jets everywhere, one of \nthe rooms looks like it was taken straight out of a \nLockheed SR-71 Blackbird");
 			Console.WriteLine("Dang, how much did they spend to get that?");
@@ -79,37 +101,37 @@ namespace AdventureGame
 					Console.ReadKey();
 					Console.WriteLine("A sleepy looking guy with a cup of coffee looks at you blankly for a moment before \nrealising that you were talking to them");
 					Console.ReadKey();
-					Dialogue("Hmm? Oh I thought you were talking to Jen", "Yellow");
+					Dialogue("Hmm? Oh I thought you were talking to Jen", "yellow");
 					Console.ReadKey();
 					Console.WriteLine("He points vaguely behind him. You see there's no one there");
 					Console.ReadKey();
-					Dialogue("I'm Bob. So you're new huh? Welcome to the grindstone. Got your first assignment yet?", "Yellow");
+					Dialogue("I'm Bob. So you're new huh? Welcome to the grindstone. Got your first assignment yet?", "yellow");
 					Console.ReadKey();
 					Console.WriteLine("You shake your head");
-					Dialogue("You should talk to Greg then, he'll assign you something", "Yellow");
+					Dialogue("You should talk to Greg then, he'll assign you something", "yellow");
 					Console.ReadKey();
 					Console.WriteLine("He points you towards a guy in a checkered shirt, who is stood at a desk");
-					Dialogue("Thanks Bob, nice to meet you by the way", "Green");
+					Dialogue("Thanks Bob, nice to meet you by the way", "green");
 					Console.ReadKey();
 					Console.WriteLine("Bob nods in acknowledgement and wanders off to his desk");
 					Console.ReadKey();
 					Console.WriteLine("You decide to go see the person who hired you, Greg");
 					Console.ReadKey();
-					Dialogue("\"Hey Greg, it's my first day. What should I do?\"", "Green");
+					Dialogue("\"Hey Greg, it's my first day. What should I do?\"", "green");
 					Console.ReadKey();
-					Dialogue("\"Oh hey " + FCharacterName + "! Welcome aboard. Well since you're just starting out we thought \nwe'd give you a simple project\"", "Cyan");
+					Dialogue("\"Oh hey " + FCharacterName + "! Welcome aboard. Well since you're just starting out we thought \nwe'd give you a simple project\"", "cyan");
 					Console.ReadKey();
-					Dialogue("\"Great, what do you want me to do?\"", "Green");
+					Dialogue("\"Great, what do you want me to do?\"", "green");
 					Console.ReadKey();
 					Console.WriteLine("Greg hands you a knife");
 					Console.ReadKey();
-					Dialogue("\"I need you to go into the basement and shank the bugs down there\"", "Cyan");
+					Dialogue("\"I need you to go into the basement and shank the bugs down there\"", "cyan");
 					Console.ReadKey();
-					Dialogue("\"I thought this was a software company?\"", "Green");
+					Dialogue("\"I thought this was a software company?\"", "green");
 					Console.ReadKey();
-					Dialogue("\"Yes, and it's your job to get rid of those bugs!\"", "Cyan");
+					Dialogue("\"Yes, and it's your job to get rid of those bugs!\"", "cyan");
 					Console.WriteLine("You are handed a pointy piece of metal, and Greg points you towards an ominous looking door. \nYou're not sure what you've gotten yourself into, but it looks like you have a task at least");
-					Dialogue("And don't forget to mark it \"done\" in Jira afterwards!", "Cyan");
+					Dialogue("And don't forget to mark it \"done\" in Jira afterwards!", "cyan");
 					BugQuest();
 				}
 				else
@@ -135,21 +157,21 @@ namespace AdventureGame
 			{
 				Console.WriteLine("You decide to go see the person who hired you, Greg");
 				Console.ReadKey();
-				Dialogue("\"Hey Greg, it's my first day. What should I do?\"", "Green");
+				Dialogue("\"Hey Greg, it's my first day. What should I do?\"", "green");
 				Console.ReadKey();
-				Dialogue("\"Oh hey " + FCharacterName + "! Welcome aboard. Well since you're just starting out we thought \nwe'd give you a simple project\"", "Cyan");
+				Dialogue("\"Oh hey " + FCharacterName + "! Welcome aboard. Well since you're just starting out we thought \nwe'd give you a simple project\"", "cyan");
 				Console.ReadKey();
-				Dialogue("\"Great, what do you want me to do?\"", "Green");
+				Dialogue("\"Great, what do you want me to do?\"", "green");
 				Console.ReadKey();
 				Console.WriteLine("Greg hands you a knife");
 				Console.ReadKey();
-				Dialogue("\"I need you to go into the basement and shank the bugs down there\"", "Cyan");
+				Dialogue("\"I need you to go into the basement and shank the bugs down there\"", "cyan");
 				Console.ReadKey();
-				Dialogue("\"I thought this was a software company?\"", "Green");
+				Dialogue("\"I thought this was a software company?\"", "green");
 				Console.ReadKey();
-				Dialogue("\"Yes, and it's your job to get rid of those bugs!\"", "Cyan");
+				Dialogue("\"Yes, and it's your job to get rid of those bugs!\"", "cyan");
 				Console.WriteLine("You are handed a pointy piece of metal, and Greg points you towards an ominous looking door. \nYou're not sure what you've gotten yourself into, but it looks like you have a task at least");
-				Dialogue("And don't forget to mark it \"done\" in Jira afterwards!", "Cyan");
+				Dialogue("And don't forget to mark it \"done\" in Jira afterwards!", "cyan");
 				BugQuest();
 			}
 
@@ -159,7 +181,7 @@ namespace AdventureGame
 		{
 			Console.Clear();
 			Console.ReadKey();
-			Console.WriteLine("You look at the knife, on closer inspection it has \"C#\" written on it. \nYou touch the blade and find see that it is infact sharp. You open the ominous\n door, it's dark in here.");
+			Console.WriteLine("You look at the knife, on closer inspection it has \"C#\" written on it.\nYou touch the blade and find see that it is infact sharp. You open the ominous \ndoor, it's dark in here.");
 			Console.ReadKey();
 			Console.WriteLine("You head down the stairs into the gloomy basement. It's difficult to see down \nhere");
 			Console.ReadKey();
@@ -172,7 +194,7 @@ namespace AdventureGame
 		{
 			string input = "";
 			Console.Clear();
-			Console.WriteLine("You could try finding a light switch in here, or you could just use the torch on your phone");
+			Console.WriteLine("You could try finding a light switch in here, or you could just use the torch \non your phone");
 			Console.ReadKey();
 			Console.WriteLine("A: Search for the light switch");
 			Console.WriteLine("B: Use the torch on your phone");
@@ -205,16 +227,29 @@ namespace AdventureGame
 			Console.ReadKey();
 			Spider();
 			Console.ReadKey();
-			Dialogue("Psst hey kid wanna buy some drugs?", "Red");
+			Console.WriteLine("You are faced with the biggest spider you've ever seen.\nFrozen from shock, a few moments pass before you hear:");
+			Dialogue("Psst hey kid wanna buy some drugs?", "red");
 		}
 
 		private static void Spider()
 		{
-			Console.WriteLine(@"
-  /^\ ___ /^\
- //^\(o o)/^\\
-/'<^~``~''~^>`\
-
+			Console.Write(@"
+             ||
+             ||
+             ||
+             ||
+             ||
+             ||
+       _ /\  ||  /\ _
+      / X  \.--./  X \
+     /_/ \/`    `\/ \_\
+    /|(`-/\_/)(\_/\-`)|\
+   ( |` (_(.oOOo.)_) `| )
+   ` |  `//\(  )/\\`  | `
+     (  // ()\/() \\  )
+      ` (   \   /   ) `
+         \         /        
+          `       `  
 ");
 
 
