@@ -1,28 +1,6 @@
 ﻿using System;
 using System.Threading;
 
-namespace JB
-{
-
-	class Program
-	{
-
-		static void Main(string[] args)
-		{
-
-			// Display current Title 
-			Console.WriteLine("Default Title: {0}",
-								   Console.Title);
-
-			// Set the Title to GeeksForGeeks 
-			Console.Title = "JETBUILDERS";
-
-			// Display current Title 
-			Console.WriteLine("Changed Title: {0}",
-								   Console.Title);
-		}
-	}
-}
 namespace AdventureGame
 {
 	public static class Game
@@ -229,6 +207,10 @@ namespace AdventureGame
 			Console.ReadKey();
 			Console.WriteLine("You are faced with the biggest spider you've ever seen.\nFrozen from shock, a few moments pass before you hear:");
 			Dialogue("Psst hey kid wanna buy some drugs?", "red");
+			Console.WriteLine("This seems to be the bug they were talking about. I guess \nyou have to deal with it somehow");
+			Console.WriteLine("A: Shank it with your C# knife");
+			Console.WriteLine("B: Call the cops");
+			Console.WriteLine("C: Nope right out of there");
 		}
 
 		private static void Spider()
@@ -281,6 +263,16 @@ namespace AdventureGame
 		{
 			static void Main()
 			{
+				// Display current Title 
+				Console.WriteLine("Default Title: {0}",
+									   Console.Title);
+
+				// Set the Title to GeeksForGeeks 
+				Console.Title = "JETBUILDERS";
+
+				// Display current Title 
+				Console.WriteLine("Changed Title: {0}",
+									   Console.Title);
 				Game.StartGame();
 				Console.Read();
 			}
