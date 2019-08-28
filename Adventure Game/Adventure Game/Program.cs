@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace AdventureGame
 {
@@ -237,7 +238,7 @@ namespace AdventureGame
 			Console.WriteLine("C: Nope right out of there");
 			input = Console.ReadLine();
 			input = input.ToUpper();
-			if (input =="A")
+			if (input == "A")
 			{
 				Console.WriteLine("You take out your knife, and decide to see how sharp it really is");
 				Console.ReadKey();
@@ -249,17 +250,39 @@ namespace AdventureGame
 				Spider();
 				Console.ReadKey();
 				Console.Clear();
-				SpiderDead();		
+				SpiderDead();
+				Console.ReadKey();
+				Dialogue("Don't... forget... to mark it as done in Jira", "red");
+				Console.ReadKey();
+				Console.Clear();
+				QuestComplete();
 			}
 			else if (input == "B")
 			{
+				Console.WriteLine("Did that spider just offer you drugs?");
+				Console.ReadKey();
+				Console.WriteLine("You decide to call the cops, afterall, drugs are illegal");
+				Console.ReadKey();
+				Dialogue("You're calling the popo?! Screw this I'm out!", "red");
+				Console.WriteLine("you see the spider hurriedly pack a suitcase full of \nwebbing and scurry off into the vents");
+				Console.ReadKey();
+				Console.WriteLine("I guess you're done with the quest. You hear a voice \necho through the vents as you turn to leave");
+				Dialogue("Don't forget to mark it as done in Jira", "red");
+				Console.ReadKey();
+				Console.Clear();
+				QuestComplete();
 
 			}
 			else if (input == "C")
 			{
+				Console.WriteLine("At the sight of the oversized apparently TALKING \nspider you decide to back away right up the stairs you just came down");
+				Console.ReadKey();
+				Dialogue("That's right, walk away! And make sure you let the others \nknow that this is spider turf", "red");
+				Console.ReadKey();
+				QuestFailed();
 
 			}
-			else 
+			else
 			{
 				Console.WriteLine("Pick from one of the choices");
 				Console.ReadKey();
@@ -267,7 +290,54 @@ namespace AdventureGame
 				BugFight();
 			}
 		}
+		private static void QuestComplete()
+		{
 
+		}
+		private static void QuestFailed()
+		{
+			Console.Clear();
+			Console.WriteLine("You head back upstairs and bump into the Greg, the guy who hired you");
+			Console.ReadLine();
+			Dialogue("I can't do it, this isn't what I signed up for!", "green");
+			Console.ReadLine();
+			Console.WriteLine("Greg doesn't appear surprised by your outburst");
+			Console.ReadLine();
+			Dialogue("Well I can't say I didn't expect this, not everyone is cut out to be a developer", "cyan");
+			Console.ReadLine();
+			Console.WriteLine("He walks you over to his desk, and shuffles about with paperwork for a moment");
+			Console.ReadLine();
+			Dialogue("I don't think you're a good fit at this company, so I'm afraid I'm going to have to ask you to sign that","cyan");
+			Console.ReadLine();
+			Console.WriteLine("It's an acknowledgement of termination. You hastily sign \nit so you can leave and find a less insane job. As you're \nreading through the contract something catches your eye, a \"Cannon Clause\"");
+			Console.ReadLine();
+			Dialogue("What's this Cannon Clause about?", "green");
+			Console.ReadLine();
+			Console.WriteLine("Greg pulls a lever that was obscured by his monitor and \nthe floor underneath you vanishes");
+			Console.ReadLine();
+			Console.WriteLine("You find yourself in the barrel of a cannon");
+			Dialogue("Should have read the contract!", "cyan");
+			Console.ReadLine();
+			Dialogue("Oh shi-","green");
+			Thread.Sleep(1000);
+			Console.Clear();
+			Death();
+		}
+
+		private static void Death()
+		{
+			Console.Write(@"
+▓██   ██▓ ▒█████   █    ██    ▓█████▄  ██▓▓█████ ▓█████▄ 
+ ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒██▀ ██▌▓██▒▓█   ▀ ▒██▀ ██▌
+  ▒██ ██░▒██░  ██▒▓██  ▒██░   ░██   █▌▒██▒▒███   ░██   █▌
+  ░ ▐██▓░▒██   ██░▓▓█  ░██░   ░▓█▄   ▌░██░▒▓█  ▄ ░▓█▄   ▌
+  ░ ██▒▓░░ ████▓▒░▒▒█████▓    ░▒████▓ ░██░░▒████▒░▒████▓ 
+   ██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒     ▒▒▓  ▒ ░▓  ░░ ▒░ ░ ▒▒▓  ▒ 
+ ▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░     ░ ▒  ▒  ▒ ░ ░ ░  ░ ░ ▒  ▒ 
+ ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░     ░ ░  ░  ▒ ░   ░    ░ ░  ░ 
+ ░ ░         ░ ░     ░           ░     ░     ░  ░   ░    
+ ░ ░                           ░                  ░      ");
+		}
 		private static void Spider()
 		{
 			Console.Write(@"
