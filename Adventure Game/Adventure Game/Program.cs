@@ -81,7 +81,7 @@ namespace AdventureGame
 				Console.ReadKey();
 				Dialogue("\"Yes, and it's your job to get rid of those bugs!\"", "cyan");
 				Console.WriteLine("You are handed a pointy piece of metal, and Greg points you towards an ominous looking door. \nYou're not sure what you've gotten yourself into, but it looks like you have a task at least");
-				Dialogue("And don't forget to mark it \"done\" in Jira afterwards!", "cyan");
+				Dialogue("\"And don't forget to mark it \"done\" in Jira afterwards!\"", "cyan");
 				ChoiceBugQuest();
 			}
 			else
@@ -110,21 +110,21 @@ namespace AdventureGame
 				Console.Clear();
 				Console.WriteLine("You turn to one of the other people in the area and introduce yourself");
 				Console.ReadKey();
-				Dialogue("Hello, my name is " + FCharacterName + ", I just started today", "green");
+				Dialogue("\"Hello, my name is " + FCharacterName + ", I just started today\"", "green");
 				Console.ReadKey();
 				Console.WriteLine("A sleepy looking guy with a cup of coffee looks at you blankly for a moment \nbefore realising that you were talking to them");
 				Console.ReadKey();
-				Dialogue("Hmm? Oh I thought you were talking to Jen", "yellow");
+				Dialogue("\"Hmm? Oh I thought you were talking to Jen\"", "yellow");
 				Console.ReadKey();
 				Console.WriteLine("He points vaguely behind him. You see there's no one there");
 				Console.ReadKey();
-				Dialogue("I'm Bob. So you're new huh? Welcome to the grindstone. Got your first \nassignment yet?", "yellow");
+				Dialogue("\"I'm Bob. So you're new huh? Welcome to the grindstone. Got your first \nassignment yet?\"", "yellow");
 				Console.ReadKey();
 				Console.WriteLine("You shake your head");
-				Dialogue("You should talk to Greg then, he'll assign you something", "yellow");
+				Dialogue("\"You should talk to Greg then, he'll assign you something\"", "yellow");
 				Console.ReadKey();
 				Console.WriteLine("He points you towards a guy in a checkered shirt, who is stood at a desk");
-				Dialogue("Thanks Bob, nice to meet you by the way", "green");
+				Dialogue("\"Thanks Bob, nice to meet you by the way\"", "green");
 				Console.ReadKey();
 				Console.WriteLine("Bob nods in acknowledgement and wanders off to his desk");
 				Console.ReadKey();
@@ -144,7 +144,7 @@ namespace AdventureGame
 				Console.ReadKey();
 				Dialogue("\"Yes, and it's your job to get rid of those bugs!\"", "cyan");
 				Console.WriteLine("You are handed a pointy piece of metal, and Greg points you towards an ominous looking door. \nYou're not sure what you've gotten yourself into, but it looks like you have a task at least");
-				Dialogue("And don't forget to mark it \"done\" in Jira afterwards!", "cyan");
+				Dialogue("\"And don't forget to mark it \"done\" in Jira afterwards!\"", "cyan");
 				ChoiceBugQuest();
 			}
 			else if (input == "B")
@@ -242,7 +242,7 @@ namespace AdventureGame
 			{
 				Console.WriteLine("You take out your knife, and decide to see how sharp it really is");
 				Console.ReadKey();
-				Dialogue("Hey what are you doing with that knife", "red");
+				Dialogue("\"Hey what are you doing with that knife\"", "red");
 				Console.ReadKey();
 				Console.WriteLine("You close your eyes and thrust your knife towards the spider!");
 				Console.ReadKey();
@@ -252,7 +252,7 @@ namespace AdventureGame
 				Console.Clear();
 				SpiderDead();
 				Console.ReadKey();
-				Dialogue("Don't... forget... to mark it as done in Jira", "red");
+				Dialogue("\"Don't... forget... to mark it as done in Jira\"", "red");
 				Console.ReadKey();
 				Console.Clear();
 				QuestComplete();
@@ -263,11 +263,11 @@ namespace AdventureGame
 				Console.ReadKey();
 				Console.WriteLine("You decide to call the cops, afterall, drugs are illegal");
 				Console.ReadKey();
-				Dialogue("You're calling the popo?! Screw this I'm out!", "red");
+				Dialogue("\"You're calling the popo?! Screw this I'm out!\"", "red");
 				Console.WriteLine("you see the spider hurriedly pack a suitcase full of \nwebbing and scurry off into the vents");
 				Console.ReadKey();
 				Console.WriteLine("I guess you're done with the quest. You hear a voice \necho through the vents as you turn to leave");
-				Dialogue("Don't forget to mark it as done in Jira", "red");
+				Dialogue("\"Don't forget to mark it as done in Jira\"", "red");
 				Console.ReadKey();
 				Console.Clear();
 				QuestComplete();
@@ -277,7 +277,7 @@ namespace AdventureGame
 			{
 				Console.WriteLine("At the sight of the oversized apparently TALKING \nspider you decide to back away right up the stairs you just came down");
 				Console.ReadKey();
-				Dialogue("That's right, walk away! And make sure you let the others \nknow that this is spider turf", "red");
+				Dialogue("\"That's right, walk away! And make sure you let the others \nknow that this is spider turf\"", "red");
 				Console.ReadKey();
 				QuestFailed();
 
@@ -299,26 +299,26 @@ namespace AdventureGame
 			Console.Clear();
 			Console.WriteLine("You head back upstairs and bump into the Greg, the guy who hired you");
 			Console.ReadLine();
-			Dialogue("I can't do it, this isn't what I signed up for!", "green");
+			Dialogue("\"I can't do it, this isn't what I signed up for!\"", "green");
 			Console.ReadLine();
 			Console.WriteLine("Greg doesn't appear surprised by your outburst");
 			Console.ReadLine();
-			Dialogue("Well I can't say I didn't expect this, not everyone is cut out to be a developer", "cyan");
+			Dialogue("\"Well I can't say I didn't expect this, not everyone is cut out to be a developer\"", "cyan");
 			Console.ReadLine();
 			Console.WriteLine("He walks you over to his desk, and shuffles about with paperwork for a moment");
 			Console.ReadLine();
-			Dialogue("I don't think you're a good fit at this company, so I'm afraid I'm going to have to ask you to sign that","cyan");
+			Dialogue("\"I don't think you're a good fit at this company, so I'm afraid I'm going to have to ask you to sign that\"", "cyan");
 			Console.ReadLine();
 			Console.WriteLine("It's an acknowledgement of termination. You hastily sign \nit so you can leave and find a less insane job. As you're \nreading through the contract something catches your eye, a \"Cannon Clause\"");
 			Console.ReadLine();
-			Dialogue("What's this Cannon Clause about?", "green");
+			Dialogue("\"What's this Cannon Clause about?\"", "green");
 			Console.ReadLine();
 			Console.WriteLine("Greg pulls a lever that was obscured by his monitor and \nthe floor underneath you vanishes");
 			Console.ReadLine();
 			Console.WriteLine("You find yourself in the barrel of a cannon");
-			Dialogue("Should have read the contract!", "cyan");
+			Dialogue("\"Should have read the contract!\"", "cyan");
 			Console.ReadLine();
-			Dialogue("Oh shi-","green");
+			Dialogue("\"Oh shi-\"", "green");
 			Thread.Sleep(1000);
 			Console.Clear();
 			Death();
