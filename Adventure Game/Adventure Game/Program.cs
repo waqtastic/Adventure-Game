@@ -326,7 +326,7 @@ namespace AdventureGame
 
 		private static void Death()
 		{
-			Console.Write(@"
+			Typewrite(@"
 ▓██   ██▓ ▒█████   █    ██    ▓█████▄  ██▓▓█████ ▓█████▄ 
  ▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒██▀ ██▌▓██▒▓█   ▀ ▒██▀ ██▌
   ▒██ ██░▒██░  ██▒▓██  ▒██░   ░██   █▌▒██▒▒███   ░██   █▌
@@ -408,14 +408,16 @@ namespace AdventureGame
 
 			Typewrite(message);
 			Console.ResetColor();
+			Console.ReadKey();
 		}
 		static void Typewrite(string message)
 		{
 			for (int i = 0; i < message.Length; i++)
 			{
 				Console.Write(message[i]);
-				System.Threading.Thread.Sleep(60);
+				System.Threading.Thread.Sleep(20);
 			}
+			Console.WriteLine();
 		}
 		class Program
 		{
