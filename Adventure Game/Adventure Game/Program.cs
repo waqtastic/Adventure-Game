@@ -10,7 +10,7 @@ namespace AdventureGame
 		static string LCharacterName = "Haldur";
 
 		public static void StartGame()
-		{
+		{ 
 			Dialogue("Welcome to JETBUILDERS!", "white");
 			Dialogue("Our motto is: CREATE. CONSTRUCT. CONCLUDE.", "cyan");
 			NameCharacter();
@@ -394,7 +394,7 @@ namespace AdventureGame
 
 		{
 			if (color == "red")
-			{ Console.ForegroundColor = ConsoleColor.Red; }
+			{ Console.ForegroundColor = ConsoleColor.Red; } 
 			else if (color == "green")
 			{ Console.ForegroundColor = ConsoleColor.Green; }
 			else if (color == "yellow")
@@ -406,8 +406,23 @@ namespace AdventureGame
 			else
 			{ Console.ForegroundColor = ConsoleColor.White; }
 
-			Console.WriteLine(message);
+			Typewrite(message);
 			Console.ResetColor();
+		}
+
+		static void Main()
+		{
+			Typewrite("Your text here...");
+			Console.ReadKey();
+		}
+
+		static void Typewrite(string message)
+		{
+			for (int i = 0; i < message.Length; i++)
+			{
+				Console.Write(message[i]);
+				System.Threading.Thread.Sleep(60);
+			}
 		}
 		class Program
 		{
