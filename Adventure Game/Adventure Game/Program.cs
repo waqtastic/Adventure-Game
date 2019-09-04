@@ -3,6 +3,8 @@ using System.Threading;
 
 namespace AdventureGame
 {
+
+
 	public static class Game
 	{
 
@@ -23,7 +25,7 @@ namespace AdventureGame
 			Console.WriteLine("Enter your last name");
 			LCharacterName = Console.ReadLine();
 			Console.WriteLine("Welcome aboard " + FCharacterName + " " + LCharacterName + "! I'm sure you'll do just fine.");
-			Console.ReadKey();
+			pause();
 			Console.Clear();
 			Introduction();
 		}
@@ -31,17 +33,17 @@ namespace AdventureGame
 		static void Introduction()
 		{
 			Console.WriteLine("You are in an office, on your first day. You are approached by \nyour new boss, Ricardo.");
-			Console.ReadKey();
+			pause();
 			Dialogue("\"Ah! " + FCharacterName + "! Good to see you here bright and early. \nYour desk is over there\"", "cyan");
 			Console.WriteLine("You see the desk he pointed at, above it is a poster with a jet \non it along with the company motto:");
-			Console.ReadKey();
+			pause();
 			Dialogue("CREATE. CONSTRUCT. CONCLUDE.", "yellow");
 			Console.WriteLine("As you look around you notice there are jets everywhere, one of \nthe rooms looks like it was taken straight out of a \nLockheed SR-71 Blackbird");
 			Console.WriteLine("Dang, how much did they spend to get that?");
-			Console.ReadKey();
+			pause();
 			Console.WriteLine("You sit down at your desk and turn on your computer, when you \nrealise you haven't been assigned anything to do.");
 			Console.WriteLine("What do you do " + FCharacterName + "?");
-			Console.ReadKey();
+			pause();
 			Console.Clear();
 			Choice();
 		}
@@ -51,7 +53,7 @@ namespace AdventureGame
 
 			string input = "";
 			Console.WriteLine("You could get a cup of coffee, or you could ask someone what you should be doing");
-			Console.ReadKey();
+			pause();
 			Console.WriteLine("A: Go get a cup of coffee first");
 			Console.WriteLine("B: Ask someone what it is you should be doing");
 			Console.WriteLine("Enter your choice:");
@@ -64,12 +66,12 @@ namespace AdventureGame
 			else if (input == "B")
 			{
 				Console.WriteLine("You decide to go see the person who hired you, Greg");
-				Console.ReadKey();
+				pause();
 				Dialogue("\"Hey Greg, it's my first day. What should I do?\"", "green");
 				Dialogue("\"Oh hey " + FCharacterName + "! Welcome aboard. Well since you're just starting out we thought \nwe'd give you a simple project\"", "cyan");
 				Dialogue("\"Great, what do you want me to do?\"", "green");
 				Console.WriteLine("Greg hands you a knife");
-				Console.ReadKey();
+				pause();
 				Dialogue("\"I need you to go into the basement and shank the bugs down there\"", "cyan");
 				Dialogue("\"I thought this was a software company?\"", "green");
 				Dialogue("\"Yes, and it's your job to get rid of those bugs!\"", "cyan");
@@ -80,7 +82,7 @@ namespace AdventureGame
 			else
 			{
 				Console.WriteLine("Pick from one of the choices:");
-				Console.ReadKey();
+				pause();
 				Console.Clear();
 				Choice();
 			}
@@ -90,39 +92,39 @@ namespace AdventureGame
 			string input = "";
 			Console.Clear();
 			Console.WriteLine("You go to the kitchen area and see some people milling around a coffee machine \nyou grab a cup and push the button to vend a fresh brew.");
-			Console.ReadKey();
+			pause();
 			Console.WriteLine("You see some other people milling around the office. Do you talk to them or go \nback to your desk?");
 			Console.WriteLine("A: Introduce yourself to the others at the office");
 			Console.WriteLine("B: Go back to your desk");
 			Console.WriteLine("Enter your choice:");
-			Console.ReadKey();
+			pause();
 			input = Console.ReadLine();
 			input = input.ToUpper();
 			if (input == "A")
 			{
 				Console.Clear();
 				Console.WriteLine("You turn to one of the other people in the area and introduce yourself");
-				Console.ReadKey();
+				pause();
 				Dialogue("\"Hello, my name is " + FCharacterName + ", I just started today\"", "green");
 				Console.WriteLine("A sleepy looking guy with a cup of coffee looks at you blankly for a moment \nbefore realising that you were talking to them");
-				Console.ReadKey();
+				pause();
 				Dialogue("\"Hmm? Oh I thought you were talking to Jen\"", "yellow");
 				Console.WriteLine("He points vaguely behind him. You see there's no one there");
-				Console.ReadKey();
+				pause();
 				Dialogue("\"I'm Bob. So you're new huh? Welcome to the grindstone. Got your first \nassignment yet?\"", "yellow");
 				Console.WriteLine("You shake your head");
 				Dialogue("\"You should talk to Greg then, he'll assign you something\"", "yellow");
 				Console.WriteLine("He points you towards a guy in a checkered shirt, who is stood at a desk");
 				Dialogue("\"Thanks Bob, nice to meet you by the way\"", "green");
 				Console.WriteLine("Bob nods in acknowledgement and wanders off to his desk");
-				Console.ReadKey();
+				pause();
 				Console.WriteLine("You decide to go see the person who hired you, Greg");
-				Console.ReadKey();
+				pause();
 				Dialogue("\"Hey Greg, it's my first day. What should I do?\"", "green");
 				Dialogue("\"Oh hey " + FCharacterName + "! Welcome aboard. Well since you're just starting out we thought \nwe'd give you a simple project\"", "cyan");
 				Dialogue("\"Great, what do you want me to do?\"", "green");
 				Console.WriteLine("Greg hands you a knife");
-				Console.ReadKey();
+				pause();
 				Dialogue("\"I need you to go into the basement and shank the bugs down there\"", "cyan");
 				Dialogue("\"I thought this was a software company?\"", "green");
 				Dialogue("\"Yes, and it's your job to get rid of those bugs!\"", "cyan");
@@ -134,22 +136,22 @@ namespace AdventureGame
 			{
 				Console.Clear();
 				Console.WriteLine("You decide to head back to your desk and set up your laptop");
-				Console.ReadKey();
+				pause();
 				Console.WriteLine("You set up your email account and see that it has one called \"First assignment\" \non it. Looks like they've already got something \nin mind for you.");
-				Console.ReadKey();
+				pause();
 				Console.WriteLine("You open the email and it has instructions to... grab a knife and go to the \nbasement to kill some bugs");
-				Console.ReadKey();
+				pause();
 				Console.WriteLine("Are they serious?");
-				Console.ReadKey();
+				pause();
 				Console.WriteLine("As you scroll down you see that it says \"Yes, I'm serious\"");
-				Console.ReadKey();
+				pause();
 				Console.WriteLine("You get up from your desk and grab a knife from the kitchen. \nThen you head towards the basement");
 				ChoiceBugQuest();
 			}
 			else
 			{
 				Console.WriteLine("Pick from one of the choices");
-				Console.ReadKey();
+				pause();
 				Console.Clear();
 				ChoiceA();
 			}
@@ -160,13 +162,13 @@ namespace AdventureGame
 		{
 			string input = "";
 			Console.Clear();
-			Console.ReadKey();
+			pause();
 			Console.WriteLine("You look at the knife, on closer inspection it has \"C#\" written on it.\nYou touch the blade and find see that it is infact sharp. You open the ominous \ndoor, it's dark in here.");
-			Console.ReadKey();
+			pause();
 			Console.WriteLine("You head down the stairs into the gloomy basement. It's difficult to see down \nhere");
-			Console.ReadKey();
+			pause();
 			Console.WriteLine("You could try finding a light switch in here, or you could just use the torch \non your phone");
-			Console.ReadKey();
+			pause();
 			Console.WriteLine("A: Search for the light switch");
 			Console.WriteLine("B: Use the torch on your phone");
 			Console.WriteLine("Enter your choice:");
@@ -175,28 +177,28 @@ namespace AdventureGame
 			if (input == "A")
 			{
 				Console.WriteLine("You decide to look for the light switch, there's got to be one somewhere.");
-				Console.ReadKey();
+				pause();
 				Console.WriteLine("You search the dimly lit area near the entrance for a light switch without much luck");
-				Console.ReadKey();
+				pause();
 				Console.WriteLine("You stray further and further away from the light, you find a switch. You flip \nit and nothing happens");
-				Console.ReadKey();
+				pause();
 				Console.WriteLine("A buzzing noise from above echoes through the basement, followed by a \"tink\" \nas a dull yellow flash momentarily stuns you");
-				Console.ReadKey();
+				pause();
 				Console.WriteLine("On the second flash you see the bug they mentioned infront of you");
 				BugFight();
 			}
 			else if (input == "B")
 			{
 				Console.WriteLine("You use the torch on your phone to light the area up");
-				Console.ReadKey();
+				pause();
 				Console.WriteLine("In front of you, you see a giant spider!");
-				Console.ReadKey();
+				pause();
 				BugFight();
 			}
 			else
 			{
 				Console.WriteLine("Pick from one of the choices:");
-				Console.ReadKey();
+				pause();
 				Console.Clear();
 				ChoiceBugQuest();
 			}
@@ -207,14 +209,14 @@ namespace AdventureGame
 		{
 			string input = "";
 			Console.Clear();
-			Console.ReadKey();
+			pause();
 			Spider();
-			Console.ReadKey();
+			pause();
 			Console.WriteLine("You are faced with the biggest spider you've ever seen.\nFrozen from shock, a few moments pass before you hear:");
-			Console.ReadKey();
+			pause();
 			Dialogue("\"Psst hey kid wanna buy some drugs?\"", "red");
 			Console.WriteLine("This seems to be the bug they were talking about. I guess \nyou have to deal with it somehow");
-			Console.ReadKey();
+			pause();
 			Console.WriteLine("A: Shank it with your C# knife");
 			Console.WriteLine("B: Call the cops");
 			Console.WriteLine("C: Nope right out of there");
@@ -223,16 +225,16 @@ namespace AdventureGame
 			if (input == "A")
 			{
 				Console.WriteLine("You take out your knife, and decide to see how sharp it really is");
-				Console.ReadKey();
+				pause();
 				Dialogue("\"Hey what are you doing with that knife\"", "red");
 				Console.WriteLine("You close your eyes and thrust your knife towards the spider!");
-				Console.ReadKey();
+				pause();
 				Console.Clear();
 				Spider();
-				Console.ReadKey();
+				pause();
 				Console.Clear();
 				SpiderDead();
-				Console.ReadKey();
+				pause();
 				Dialogue("\"Don't... forget... to mark it as done in Jira\"", "red");
 				Console.Clear();
 				QuestComplete();
@@ -240,12 +242,12 @@ namespace AdventureGame
 			else if (input == "B")
 			{
 				Console.WriteLine("Did that spider just offer you drugs?");
-				Console.ReadKey();
+				pause();
 				Console.WriteLine("You decide to call the cops, afterall, drugs are illegal");
-				Console.ReadKey();
+				pause();
 				Dialogue("\"You're calling the popo?! Screw this I'm out!\"", "red");
 				Console.WriteLine("you see the spider hurriedly pack a suitcase full of \nwebbing and scurry off into the vents");
-				Console.ReadKey();
+				pause();
 				Console.WriteLine("I guess you're done with the quest. You hear a voice \necho through the vents as you turn to leave");
 				Dialogue("\"Don't forget to mark it as done in Jira\"", "red");
 				Console.Clear();
@@ -255,7 +257,7 @@ namespace AdventureGame
 			else if (input == "C")
 			{
 				Console.WriteLine("At the sight of the oversized apparently TALKING \nspider you decide to back away right up the stairs you just came down");
-				Console.ReadKey();
+				pause();
 				Dialogue("\"That's right, walk away! And make sure you let the others \nknow that this is spider turf\"", "red");
 				QuestFailed();
 
@@ -263,14 +265,15 @@ namespace AdventureGame
 			else
 			{
 				Console.WriteLine("Pick from one of the choices");
-				Console.ReadKey();
+				pause();
 				Console.Clear();
 				BugFight();
 			}
 		}
 		private static void QuestComplete()
 		{
-
+            Dialogue("I guess I'm done with this task. I'll go mark it as done in Jira", "green");
+            pause();
 		}
 		private static void QuestFailed()
 		{
@@ -377,8 +380,13 @@ namespace AdventureGame
 
 			Typewrite(message);
 			Console.ResetColor();
-			Console.ReadKey();
+			pause();
 		}
+
+        static void pause()
+        {
+            pause();
+        }
 		static void Typewrite(string message)
 		{
 			for (int i = 0; i < message.Length; i++)
@@ -397,6 +405,6 @@ namespace AdventureGame
 			}
 		}
 	}
-}
+
 
 	
