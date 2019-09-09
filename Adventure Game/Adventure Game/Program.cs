@@ -13,9 +13,12 @@ namespace AdventureGame
 
         public static void StartGame()
         {
-            setWindow(125,25);
-            Dialogue("Welcome to JETBUILDERS!", "white");
-            Dialogue("Our motto is: CREATE. CONSTRUCT. CONCLUDE.", "cyan");
+            setWindow(125, 25);
+            Title();
+            Dialogue("A (vaguely) interactive text based adventure game!", "cyan");
+            Console.WriteLine();
+            StoryDialogue("Press enter to get started!");
+            Console.Clear();
             NameCharacter();
         }
 
@@ -34,7 +37,7 @@ namespace AdventureGame
         static void Introduction()
         {
             StoryDialogue("You are in an office, on your first day. You are approached by your new boss, Ricardo.");
-            Dialogue("\"Ah! " + FCharacterName + "! Good to see you here bright and early. Your desk is over there\"", "cyan");
+            Dialogue("\"Ah! " + FCharacterName + "! Good to see you here bright and early. Your desk is over there\"", "white");
             StoryDialogue("You see the desk he pointed at, above it is a poster with a jet on it along with the company motto:");
             Dialogue("CREATE. CONSTRUCT. CONCLUDE.", "yellow");
             StoryDialogue("As you look around you notice there are jets everywhere, one of the rooms looks like it was taken straight out of a Lockheed SR-71 Blackbird");
@@ -77,7 +80,6 @@ namespace AdventureGame
             else
             {
                 StoryDialogue("Pick from one of the choices:");
-                Console.Clear();
                 Choice();
             }
         }
@@ -122,12 +124,13 @@ namespace AdventureGame
             else if (input == "B")
             {
                 Console.Clear();
-                StoryDialogue("You decide to head back to your desk and set up your laptop");
-                StoryDialogue("You set up your email account and see that it has one called \"First assignment\" on it. Looks like they've already got something in mind for you.");
+                StoryDialogue("You decide to head back to your desk and set up the laptop they gave you to work on.");
+                StoryDialogue("Looks like they set up an email account for you already. You have an email with \"First assignment\" on it. They've thought of everything it seems.");
                 StoryDialogue("You open the email and it has instructions to... grab a knife and go to the basement to kill some bugs");
                 StoryDialogue("Are they serious?");
                 StoryDialogue("As you scroll down you see that it says \"Yes, I'm serious\"");
-                StoryDialogue("You get up from your desk and grab a knife from the kitchen. \nThen you head towards the basement");
+                StoryDialogue("You get up from your desk and grab a knife from the kitchen and head towards the basement");
+                ChoiceBugQuest();
             }
             else
             {
@@ -234,9 +237,21 @@ namespace AdventureGame
         }
         private static void QuestComplete()
         {
-            Dialogue("I guess I'm done with this task. I'll go mark it as done in Jira", "green");
-            StoryDialogue("");
-
+            Dialogue("\"I guess I'm done with this task. I'll go mark it as done in Jira\"", "green");
+            StoryDialogue("You head back upstairs, back to your desk");
+            StoryDialogue("On your way you see Ricardo");
+            Dialogue("\"Ah! " + FCharacterName + " how did you get on with your first assignment?\"", "white");
+            StoryDialogue("You mull it over for a moment before finally giving an answer\"");
+            Dialogue("\"Well I got rid of the spider if that's what you're asking\"", "green");
+            Dialogue("\"Fantastic! I was worried we were going to have to shoot you out of the cannon, haha!\"", "white");
+            Dialogue("\"A cannon?\"", "green");
+            StoryDialogue("Before you can get him to elaborate, Ricardo wanders away from your desk. Might be worth re-reading that contract to see what that's about. You decide to login to Jetbuilders.Atlassian.net to mark your task as done.");
+            StoryDialogue("No sooner had you finished moving the ticket to the \"done\" column, Greg appears next to you.");
+            Dialogue("\"Well, thats the end of the working day. See you tomorrow " + FCharacterName + "!\"", "cyan");
+            Dialogue("\"What? But it's still the morning!\"", "green");
+            StoryDialogue("Your words fall on deaf ears, Greg is already heading towards the exit. You realise everyone else is packing up and heading out as well. When in Rome, right?");
+            StoryDialogue("After packing your stuff up you head outside, and drive home");
+            YouWin();
         }
         private static void QuestFailed()
         {
@@ -258,6 +273,17 @@ namespace AdventureGame
             Death();
         }
 
+        private static void Title()
+        {
+            Dialogue(@"     ██╗███████╗████████╗██████╗ ██╗   ██╗██╗██╗     ██████╗ ███████╗██████╗ ███████╗██╗
+     ██║██╔════╝╚══██╔══╝██╔══██╗██║   ██║██║██║     ██╔══██╗██╔════╝██╔══██╗██╔════╝██║
+     ██║█████╗     ██║   ██████╔╝██║   ██║██║██║     ██║  ██║█████╗  ██████╔╝███████╗██║
+██   ██║██╔══╝     ██║   ██╔══██╗██║   ██║██║██║     ██║  ██║██╔══╝  ██╔══██╗╚════██║╚═╝
+╚█████╔╝███████╗   ██║   ██████╔╝╚██████╔╝██║███████╗██████╔╝███████╗██║  ██║███████║██╗
+ ╚════╝ ╚══════╝   ╚═╝   ╚═════╝  ╚═════╝ ╚═╝╚══════╝╚═════╝ ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝
+                                                                                        ", "cyan");
+        }
+
         private static void Death()
         {
             Typewrite(@"
@@ -271,8 +297,33 @@ namespace AdventureGame
  ▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░     ░ ░  ░  ▒ ░   ░    ░ ░  ░ 
  ░ ░         ░ ░     ░           ░     ░     ░  ░   ░    
  ░ ░                           ░                  ░      ");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("");
+            StoryDialogue("Always read the contract!");
+            Console.ReadKey();
+            Environment.Exit(0);
         }
-        private static void Spider()
+        private static void YouWin()
+        {
+            Console.Clear();
+            Typewrite(@"
+   ,___                              _                      
+  /   /                     _/_     //     _/_o             
+ /    __ _ _   _,  _   __,  /  , , // __,  / ,  __ _ _   (  
+(___/(_)/ / /_(_)_/ (_(_/(_(__(_/_(/_(_/(_(__(_(_)/ / /_/_)_
+               /|                                           
+              (/                                            
+                                                            
+ __   _ ___  __   ,   __    _____ __                        
+( /  / /  ()( /  /   ( /   /( /( /  )     /                 
+ (__/ /   /  /  /     / / /  /  /  /     /                  
+  _/_(___/  (_,/_    (_/_/ _/_ /  (_    '                   
+ //                                    o                    
+(/                                                          
+");
+        }
+    private static void Spider()
         {
             Console.Write(@"
              ||
@@ -342,8 +393,8 @@ namespace AdventureGame
         }
         public static void setWindow(int width, int height)
         {
-            width = 125;
-            height = 25;
+            width = 150;
+            height = 35;
 
             Console.WindowWidth = width;
             Console.WindowHeight = height;
@@ -384,7 +435,7 @@ namespace AdventureGame
             for (int i = 0; i < message.Length; i++)
             {
                 Console.Write(message[i]);
-                System.Threading.Thread.Sleep(20);
+                System.Threading.Thread.Sleep(5);
             }
             Console.WriteLine();
         }
