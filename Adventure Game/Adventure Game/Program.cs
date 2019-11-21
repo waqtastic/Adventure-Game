@@ -15,9 +15,10 @@ namespace AdventureGame
         {
             setWindow(125, 25);
             Title();
-            Dialogue("A (vaguely) interactive text based adventure game!", "cyan");
+            HeadDialogue("A (vaguely) interactive text based adventure game!", "cyan");
             Console.WriteLine();
-            StoryDialogue("Press enter to get started!");
+            Typewrite("Press enter to get started!");
+			Console.ReadKey();
             Console.Clear();
             NameCharacter();
         }
@@ -275,7 +276,7 @@ namespace AdventureGame
 
         private static void Title()
         {
-            Dialogue(@"     ██╗███████╗████████╗██████╗ ██╗   ██╗██╗██╗     ██████╗ ███████╗██████╗ ███████╗██╗
+            HeadDialogue(@"     ██╗███████╗████████╗██████╗ ██╗   ██╗██╗██╗     ██████╗ ███████╗██████╗ ███████╗██╗
      ██║██╔════╝╚══██╔══╝██╔══██╗██║   ██║██║██║     ██╔══██╗██╔════╝██╔══██╗██╔════╝██║
      ██║█████╗     ██║   ██████╔╝██║   ██║██║██║     ██║  ██║█████╗  ██████╔╝███████╗██║
 ██   ██║██╔══╝     ██║   ██╔══██╗██║   ██║██║██║     ██║  ██║██╔══╝  ██╔══██╗╚════██║╚═╝
@@ -391,7 +392,26 @@ namespace AdventureGame
             Console.ResetColor();
             Console.ReadKey();
         }
-        public static void setWindow(int width, int height)
+		public static void HeadDialogue(string message, string color)
+
+		{
+			if (color == "red")
+			{ Console.ForegroundColor = ConsoleColor.Red; }
+			else if (color == "green")
+			{ Console.ForegroundColor = ConsoleColor.Green; }
+			else if (color == "yellow")
+			{ Console.ForegroundColor = ConsoleColor.Yellow; }
+			else if (color == "cyan")
+			{ Console.ForegroundColor = ConsoleColor.Cyan; }
+			else if (color == "blue")
+			{ Console.ForegroundColor = ConsoleColor.Blue; }
+			else
+			{ Console.ForegroundColor = ConsoleColor.White; }
+
+			Typewrite(message);
+			Console.ResetColor();
+		}
+		public static void setWindow(int width, int height)
         {
             width = 150;
             height = 35;
